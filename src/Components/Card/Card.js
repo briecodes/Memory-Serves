@@ -5,7 +5,7 @@ export default function Card(props) {
   const [active, setActive] = useState(false);
 
   function handleClick() {
-    props.handleCompare('item');
+    props.handleCompare(props.id);
     setActive(!active);
   };
 
