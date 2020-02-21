@@ -13,7 +13,7 @@ export default function App() {
 
   return (
     <div className="App">
-      {page !== 'game' ? <Interstitial page={page} handlePageChange={changePage} /> : <Gameboard />}
+      {page !== 'game' ? <Interstitial page={page} handlePageChange={changePage} /> : <Gameboard handlePageChange={changePage} />}
     </div>
   );
 };
