@@ -8,7 +8,8 @@ export default function Gameboard(props) {
 
   return (
     <>
-      gameboard
+      <button onClick={() => props.handlePageChange('home')}>go back</button>
+      gameboard | {difficulty}
       {difficulty ? null : <Interstitial page={'difficulty'} setDifficulty={setDifficulty} handlePageChange={props.handlePageChange} />}
     </>
   );
