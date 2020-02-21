@@ -4,6 +4,7 @@ import './Interstitial.css';
 export default function Interstitial() {
   return (
     <>
+      Interstitial
     </>
   );
 };
