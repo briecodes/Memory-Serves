@@ -1,16 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Card.css';
 
 export default function Card(props) {
-  const [active, setActive] = useState(false);
-
-  function handleClick() {
-    props.handleCompare(props.id);
-    setActive(!active);
-  };
 
   return (
-    <div className={`card set ${active ? 'active' : null}`} onClick={handleClick}>
+    <div className={`card set ${props.set.includes(props.id) ? 'active' : ''} ${props.wonSet.includes(props.id) ? 'won' : ''}`} onClick={() => props.handleCompare(props.id)}>
       Card {props.id}
     </div>
   );

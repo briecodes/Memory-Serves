@@ -2,3 +2,8 @@ div.card.active {
   border: solid 1px pink;
   pointer-events: none;
 }
+
+div.card.won {
+  border: solid 1px green;
+  pointer-events: none;
+}
