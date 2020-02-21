@@ -22,30 +22,37 @@ export default function Interstitial(props) {
   function home() {
     return (<>
       home
+      <button onClick={() => props.handlePageChange('game')}>play</button>
+      <button onClick={() => props.handlePageChange('instructions')}>instructions</button>
+      <button onClick={() => props.handlePageChange('about')}>about</button>
     </>);
   };
   
   function about() {
     return (<>
       about
+      <button onClick={() => props.handlePageChange('home')}>go back</button>
     </>);
   };
   
   function instructions() {
     return (<>
       instructions
+      <button onClick={() => props.handlePageChange('home')}>go back</button>
     </>);
   };
   
   function difficulty() {
     return (<>
       difficulty
+      <button onClick={() => props.handlePageChange('home')}>go back</button>
     </>);
   };
   
   function endgame() {
     return (<>
       endgame
+      <button onClick={() => props.handlePageChange('home')}>go back</button>
     </>);
   };
 
