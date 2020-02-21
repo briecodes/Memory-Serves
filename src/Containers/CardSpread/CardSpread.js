@@ -20,7 +20,6 @@ export default function CardSpread(props) {
 
   function compareSet(card) {
     set.current.push(card);
-    console.log('compare this: ', this);
 
     if (set.current.length === 2) {
       set.current[0].split('-')[0] === set.current[1].split('-')[0] ? console.log('score!') : console.log('NO SCORE');
