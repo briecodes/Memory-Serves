@@ -11,7 +11,7 @@ export default function Card(props) {
 
   return (
     <div className={`card set ${active ? 'active' : null}`} onClick={handleClick}>
-      Card
+      Card {props.id}
     </div>
   );
 };

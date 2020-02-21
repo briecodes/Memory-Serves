@@ -9,8 +9,10 @@ export default function CardSpread(props) {
   
   function dealCards() {
     const cardArray = [];
+
     for (let i = 0; i <= cardCount; i++) {
-      cardArray.push(<Card key={i} handleCompare={compareSet} />);
+      cardArray.push(<Card key={i + 'a'} id={`s${i}-a`} handleCompare={compareSet} />);
+      cardArray.push(<Card key={i + 'b'} id={`s${i}-b`} handleCompare={compareSet} />);
     };
 
     return cardArray;
