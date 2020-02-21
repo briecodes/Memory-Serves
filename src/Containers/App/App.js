@@ -5,7 +5,7 @@ import Interstitial from '../../Components/Interstitial/Interstitial';
 import Gameboard from '../Gameboard/Gameboard';
 
 export default function App() {
-  const [page, setPage] = useState('');
+  const [page, setPage] = useState('home');
 
   function changePage(page) {
     setPage(page);
@@ -13,7 +13,7 @@ export default function App() {
 
   return (
     <div className="App">
-      {page != 'game' ? <Interstitial page={page} handlePageChange={changePage} /> : <Gameboard />}
+      {page !== 'game' ? <Interstitial page={page} handlePageChange={changePage} /> : <Gameboard />}
     </div>
   );
 };
