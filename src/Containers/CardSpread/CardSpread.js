@@ -5,6 +5,7 @@ import Card from '../../Components/Card/Card';
 
 export default function CardSpread(props) {
   const [cardSets, setCardSets] = useState({set: [], wonSet: []});
+  const firstRender = useRef({tf: true, array: []});
   const compareTimeout = useRef();
   
   function dealCards() {
@@ -15,7 +16,29 @@ export default function CardSpread(props) {
       cardArray.push(<Card key={i + 'b'} id={`set${i}-b`} handleCompare={compareSet} wonSet={cardSets.wonSet} set={cardSets.set} />);
     };
 
-    return cardArray;
+    if (firstRender.current.tf) {
+      console.log('working~');
+      firstRender.current.array = [...fisherYates(cardArray)];
+      firstRender.current.tf = false;
+    } else {
+      firstRender.current.array = [...firstRender.current.array];
+    };
+
+    return firstRender.current.array;
+    // return cardArray;
+  };
+
+  function fisherYates(arr) {
+    let array = [...arr];
+
+    for (var i = array.length - 1; i > 0; i--) {
+      var index = Math.floor(Math.random() * i);
+      var tmp = array[index];
+      array[index] = array[i];
+      array[i] = tmp;
+    };
+
+    return array;
   };
 
   function compareSet(card) {
