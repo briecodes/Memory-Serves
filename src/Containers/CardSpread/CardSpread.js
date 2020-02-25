@@ -1,32 +1,23 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './CardSpread.css';
 
 import Card from '../../Components/Card/Card';
 
 export default function CardSpread(props) {
   const [cardSets, setCardSets] = useState({set: [], wonSet: []});
-  const firstRender = useRef({tf: true, array: []});
+  const [deck, setDeck] = useState([]);
   const compareTimeout = useRef();
-  
-  function dealCards() {
+
+  useEffect(() => {
     const cardArray = [];
 
     for (let i = 0; i <= 30; i++) {
-      cardArray.push(<Card key={i + 'a'} id={`set${i}-a`} handleCompare={compareSet} wonSet={cardSets.wonSet} set={cardSets.set} />);
-      cardArray.push(<Card key={i + 'b'} id={`set${i}-b`} handleCompare={compareSet} wonSet={cardSets.wonSet} set={cardSets.set} />);
+      cardArray.push({key: i + 'a', id: `set${i}-a`});
+      cardArray.push({key: i + 'b', id: `set${i}-b`});
     };
 
-    if (firstRender.current.tf) {
-      console.log('working~');
-      firstRender.current.array = [...fisherYates(cardArray)];
-      firstRender.current.tf = false;
-    } else {
-      firstRender.current.array = [...firstRender.current.array];
-    };
-
-    return firstRender.current.array;
-    // return cardArray;
-  };
+    setDeck([...fisherYates(cardArray)]);
+  }, []);
 
   function fisherYates(arr) {
     let array = [...arr];
@@ -47,7 +38,6 @@ export default function CardSpread(props) {
     } else if (cardSets.set.length === 1) {
 
       compareTimeout.current = window.setTimeout(() => {
-        // setCardSets({sets: [...cardSets.set, card], wonSet: [...cardSets.wonSet]});
 
         if (cardSets.set[0].split('-')[0] === card.split('-')[0]) {
           setCardSets({set: [], wonSet: [...cardSets.wonSet, ...cardSets.set, card]});
@@ -60,6 +50,6 @@ export default function CardSpread(props) {
 
   return (<>
     CardSpread
-    {dealCards()}
+    {deck.map(e => <Card key={e.key} id={e.id} handleCompare={compareSet} wonSet={cardSets.wonSet} set={cardSets.set} />)}
   </>);
 };
