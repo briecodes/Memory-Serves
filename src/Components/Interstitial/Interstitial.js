@@ -46,9 +46,9 @@ export default function Interstitial(props) {
     return (<>
       difficulty
       <button onClick={() => props.handlePageChange('home')}>go back</button>
-      <button onClick={() => props.setDifficulty('easy')}>easy</button>
-      <button onClick={() => props.setDifficulty('medium')}>medium</button>
-      <button onClick={() => props.setDifficulty('hard')}>hard</button>
+      <button onClick={() => props.handleDifficulty('easy')}>easy</button>
+      <button onClick={() => props.handleDifficulty('medium')}>medium</button>
+      <button onClick={() => props.handleDifficulty('hard')}>hard</button>
     </>);
   };
   

@@ -11,13 +11,13 @@ export default function CardSpread(props) {
   useEffect(() => {
     const cardArray = [];
 
-    for (let i = 0; i <= 30; i++) {
+    for (let i = 0; i <= props.difficulty; i++) {
       cardArray.push({key: i + 'a', id: `set${i}-a`});
       cardArray.push({key: i + 'b', id: `set${i}-b`});
     };
 
     setDeck([...fisherYates(cardArray)]);
-  }, []);
+  }, [props.difficulty]);
 
   function fisherYates(arr) {
     let array = [...arr];
@@ -41,11 +41,16 @@ export default function CardSpread(props) {
 
         if (cardSets.set[0].split('-')[0] === card.split('-')[0]) {
           setCardSets({set: [], wonSet: [...cardSets.wonSet, ...cardSets.set, card]});
-        }else {
+          if (didjaWin()) props.setGameEnd(true);
+        } else {
           setCardSets({set: [], wonSet: [...cardSets.wonSet]});
         };
       }, 500);
     };
+  };
+
+  function didjaWin() {
+    return cardSets.wonSet.length === props.difficulty * 2 ? true : false;
   };
 
   return (<>
