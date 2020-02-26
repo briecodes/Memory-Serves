@@ -1,3 +1,9 @@
+div.card {
+  background: lightgray;
+  font-size: .4em;
+  align-self: center;
+}
+
 div.card.active {
   border: solid 1px pink;
   pointer-events: none;

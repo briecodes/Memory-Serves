@@ -53,8 +53,10 @@ export default function CardSpread(props) {
     return cardSets.wonSet.length === props.difficulty * 2 ? true : false;
   };
 
-  return (<>
-    CardSpread
-    {deck.map(e => <Card key={e.key} id={e.id} handleCompare={compareSet} wonSet={cardSets.wonSet} set={cardSets.set} />)}
-  </>);
+  return (
+    <div className='card-spread-container'>
+      CardSpread
+      {deck.map(e => <Card key={e.key} id={e.id} handleCompare={compareSet} wonSet={cardSets.wonSet} set={cardSets.set} />)}
+    </div>
+  );
 };
