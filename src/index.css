@@ -5,9 +5,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+button.btn-back {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  background: lightgray;
+  padding: 5px;
+  border-radius: 15px;
 }
