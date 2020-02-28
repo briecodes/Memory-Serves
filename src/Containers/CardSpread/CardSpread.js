@@ -41,7 +41,6 @@ export default function CardSpread(props) {
 
         if (cardSets.set[0].split('-')[0] === card.split('-')[0]) {
           setCardSets({set: [], wonSet: [...cardSets.wonSet, ...cardSets.set, card]});
-          if (didjaWin()) props.setGameEnd(true);
         } else {
           setCardSets({set: [], wonSet: [...cardSets.wonSet]});
         };
@@ -50,11 +49,13 @@ export default function CardSpread(props) {
   };
 
   function didjaWin() {
+    console.log(`didja win? ${cardSets.wonSet.length}, ${props.difficulty * 2}`)
     return cardSets.wonSet.length === props.difficulty * 2 ? true : false;
   };
 
   return (
     <div className='card-spread-container'>
+      {didjaWin() ? props.setGameEnd(true) : null}
       {deck.map(e => <Card key={e.key} id={e.id} handleCompare={compareSet} wonSet={cardSets.wonSet} set={cardSets.set} difficulty={props.difficulty} />)}
     </div>
   );
