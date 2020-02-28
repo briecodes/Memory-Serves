@@ -4,18 +4,19 @@ div.card {
   align-self: center;
   text-align: center;
   overflow: hidden;
+  flex-basis: 16.68%;
 }
 
-div.card.count5 {
+div.card.count6 {
   flex-basis: 22%;
 }
 
-div.card.count10 {
-  flex-basis: 16.75%;
+div.card.count12 {
+  flex-basis: 22%;
 }
 
 div.card.count15 {
-  flex-basis: 14.3%;
+  flex-basis: 16.68%;
 }
 
 div.card.active {

@@ -11,7 +11,7 @@ export default function CardSpread(props) {
   useEffect(() => {
     const cardArray = [];
 
-    for (let i = 0; i <= props.difficulty; i++) {
+    for (let i = 0; i < props.difficulty; i++) {
       cardArray.push({key: i + 'a', id: `set${i}-a`});
       cardArray.push({key: i + 'b', id: `set${i}-b`});
     };

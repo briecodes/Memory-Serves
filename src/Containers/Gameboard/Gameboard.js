@@ -11,7 +11,7 @@ export default function Gameboard(props) {
   function handleDifficulty(difficulty) {
     switch(difficulty) {
       case 'easy':
-        setDifficulty(5);
+        setDifficulty(6);
         break;
       case 'medium':
         setDifficulty(10);
