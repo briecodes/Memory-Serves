@@ -1,6 +1,7 @@
 div.card-spread-container {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  justify-content: space-evenly;
   flex-wrap: wrap;
   width: 90%;
   height: 90%;
