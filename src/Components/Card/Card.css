@@ -1,15 +1,62 @@
 div.card {
-  background: lightgray;
+  position: relative;
   font-size: .4em;
   align-self: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+div.card.count5 {
+  flex-basis: 22%;
+}
+
+div.card.count10 {
+  flex-basis: 16.75%;
+}
+
+div.card.count15 {
+  flex-basis: 14.3%;
 }
 
 div.card.active {
-  border: solid 1px pink;
   pointer-events: none;
 }
 
 div.card.won {
-  border: solid 1px green;
   pointer-events: none;
+}
+
+div.card img.card-frame {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  padding: 0;
+  margin: 0;
+}
+
+div.card img.card-curtain {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transition: all 0.25s;
+}
+
+
+div.card img.card-curtain.active,
+div.card img.card-curtain.won {
+  top: 95%;
+}
+
+div.card span.temp-id {
+  position: absolute;
+  display: block;
+  width: 100%;
+  text-align: center;
+  top: 48%;
+  left: 0;
+  font-size: .2em;
 }

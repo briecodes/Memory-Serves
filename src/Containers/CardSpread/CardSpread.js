@@ -55,7 +55,7 @@ export default function CardSpread(props) {
 
   return (
     <div className='card-spread-container'>
-      {deck.map(e => <Card key={e.key} id={e.id} handleCompare={compareSet} wonSet={cardSets.wonSet} set={cardSets.set} />)}
+      {deck.map(e => <Card key={e.key} id={e.id} handleCompare={compareSet} wonSet={cardSets.wonSet} set={cardSets.set} difficulty={props.difficulty} />)}
     </div>
   );
 };
