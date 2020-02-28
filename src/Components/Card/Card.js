@@ -17,10 +17,6 @@ export default function Card(props) {
   };
 
   return (
-    // <div className={`card set ${props.set.includes(props.id) ? 'active' : ''} ${props.wonSet.includes(props.id) ? 'won' : ''}`} onClick={() => props.handleCompare(props.id)}>
-    //   Card {props.id}
-    // </div>
-
     <div className={`card set count${props.difficulty} ${props.set.includes(props.id) || active ? 'active' : ''} ${props.wonSet.includes(props.id) ? 'won' : ''}`} onClick={handleClick}>
       <span className='temp-id'>{props.id}</span>
       <img src={cardFrame} className='card-frame' alt='card' />
