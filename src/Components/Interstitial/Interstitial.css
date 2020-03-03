@@ -14,3 +14,12 @@ div.intersititial div.center-bloc {
   display: flex;
   flex-flow: column;
 }
+
+div.intersititial div.center-bloc > * {
+  align-self: center;
+}
+
+img.logo {
+  width: 70vw;
+  margin-bottom: 5%;
+}

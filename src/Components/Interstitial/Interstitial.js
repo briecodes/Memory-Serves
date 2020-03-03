@@ -1,5 +1,8 @@
 import React from 'react';
 import './Interstitial.css';
+import Scene from '../../Components/Scene/Scene';
+
+import logo from '../../Assets/Images/memory-serves-logo.svg';
 
 export default function Interstitial(props) {
   
@@ -21,11 +24,15 @@ export default function Interstitial(props) {
 
   function home() {
     return (
-      <div className='center-bloc'>
-        <button onClick={() => props.handlePageChange('game')}>play</button>
-        <button onClick={() => props.handlePageChange('instructions')}>instructions</button>
-        <button onClick={() => props.handlePageChange('about')}>about</button>
-      </div>
+      <>
+        <div className='center-bloc'>
+          <img src={logo} alt='memory serves logo' className='logo' />
+          <button className='btn-primary' style={{alignSelf: 'flex-start', marginLeft: '-7%', marginBottom: '5%'}} onClick={() => props.handlePageChange('game')}>play</button>
+          <button className='btn-secondary' style={{alignSelf: 'flex-start'}} onClick={() => props.handlePageChange('instructions')}>instructions</button>
+          <button className='btn-secondary' style={{alignSelf: 'flex-end', marginRight: '-7%'}} onClick={() => props.handlePageChange('about')}>about</button>
+        </div>
+        <Scene />
+      </>
     );
   };
   
@@ -36,7 +43,7 @@ export default function Interstitial(props) {
         <p>
           Here is some copy about the app.
         </p>
-        <button className='btn-back' onClick={() => props.handlePageChange('home')}>go back</button>
+        <button className='btn-secondary' onClick={() => props.handlePageChange('home')}>go back</button>
       </div>
     );
   };
@@ -48,7 +55,7 @@ export default function Interstitial(props) {
         <p>
           Here are some instructions. wow.
         </p>
-        <button className='btn-back' onClick={() => props.handlePageChange('home')}>go back</button>
+        <button className='btn-secondary' onClick={() => props.handlePageChange('home')}>go back</button>
       </div>
     );
   };
@@ -57,10 +64,10 @@ export default function Interstitial(props) {
     return (
       <div className='center-bloc'>
         <h1>set difficulty</h1>
-        <button className='btn-back' onClick={() => props.handlePageChange('home')}>go back</button>
-        <button onClick={() => props.handleDifficulty('easy')}>easy</button>
-        <button onClick={() => props.handleDifficulty('medium')}>medium</button>
-        <button onClick={() => props.handleDifficulty('hard')}>hard</button>
+        <button className='btn-primary' onClick={() => props.handleDifficulty('easy')}>easy</button>
+        <button className='btn-primary' onClick={() => props.handleDifficulty('medium')}>medium</button>
+        <button className='btn-primary' onClick={() => props.handleDifficulty('hard')}>hard</button>
+        <button className='btn-secondary' onClick={() => props.handlePageChange('home')}>go back</button>
       </div>
     );
   };
