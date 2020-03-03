@@ -1,7 +1,7 @@
 div.gameboard {
-  height: 85%;
+  height: 87%;
   width: 96%;
-  top: 12%;
+  top: 11%;
   left: 2%;
   position: absolute;
   box-sizing: border-box;
@@ -10,7 +10,7 @@ div.gameboard {
 }
 
 div.header {
-  height: 9%;
+  height: 8%;
   width: 96%;
   top: 1%;
   left: 2%;
@@ -22,8 +22,8 @@ div.header {
 
 div.header button {
   height: 80%;
-  padding: 0 20px;
-  margin: 1.5% 0 0 0;
+  padding: 0 15px;
+  margin: 1.25% 0 0 0;
   left: 1.5%;
   background: url(../../Assets/Images/arrow.png) no-repeat;
   background-position: center;
