@@ -31,3 +31,36 @@ div.header button {
   background-color: #ffffff;
   position: absolute;
 }
+
+div.difficulty-container,
+div.tries-container {
+  position: relative;
+  float: right;
+  padding: 0;
+  margin: 0 8% 0 0;
+}
+
+div.difficulty-container {
+  margin-right: 10%;
+}
+
+div.header-title {
+  font-size: 15px;
+  color: rgba(42, 110, 154, 0.7);
+}
+
+
+div.header-content {
+  font-size: 30px;
+  line-height: 0.25;
+}
+
+div.header-content.infini {
+  font-size: 35px;
+  line-height: 0.33;
+}
+
+div.header-content.num {
+  font-size: 25px;
+  line-height: 0.6;
+}

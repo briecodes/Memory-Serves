@@ -75,7 +75,7 @@ export default function Interstitial(props) {
   function endgame() {
     return (
       <div className='center-bloc'>
-        <h1>you dun won!</h1>
+        {props.wonLose === 'win' ? <h1>you dun won!</h1> : <h1 style={{lineHeight: '.8'}}>better luck<br />next time!</h1> }
         <button className='btn-secondary' onClick={() => props.handlePageChange('home')}>home</button>
       </div>
     );

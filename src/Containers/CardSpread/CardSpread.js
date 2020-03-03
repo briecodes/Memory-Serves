@@ -3,7 +3,7 @@ import './CardSpread.css';
 
 import Card from '../../Components/Card/Card';
 
-export default function CardSpread(props) {
+const CardSpread = React.memo(props => {
   const [cardSets, setCardSets] = useState({set: [], wonSet: []});
   const [study, setStudy] = useState(true);
   const [deck, setDeck] = useState([]);
@@ -49,6 +49,7 @@ export default function CardSpread(props) {
           setCardSets({set: [], wonSet: [...cardSets.wonSet, ...cardSets.set, card]});
         } else {
           setCardSets({set: [], wonSet: [...cardSets.wonSet]});
+          props.triesHandler(props.tries - 1);
         };
       }, 500);
     };
@@ -60,8 +61,12 @@ export default function CardSpread(props) {
 
   return (
     <div className='card-spread-container'>
-      {didjaWin() ? props.setGameEnd(true) : null}
+      {didjaWin() ? props.setGameEnd({end: true, wonLose: 'win'}) : null}
+      {props.tries === 0 ? props.setGameEnd({end: true, wonLose: 'lose'}) : null}
       {deck.map(e => <Card key={e.key} id={e.id} handleCompare={compareSet} wonSet={cardSets.wonSet} set={cardSets.set} difficulty={props.difficulty} study={study} />)}
     </div>
   );
-};
+}
+);
+
+export default CardSpread;
