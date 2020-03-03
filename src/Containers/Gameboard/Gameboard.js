@@ -25,10 +25,13 @@ export default function Gameboard(props) {
 
   return (
     <>
-      <button onClick={() => props.handlePageChange('home')}>go back</button>
-      {difficulty ? <CardSpread setGameEnd={setGameEnd} difficulty={difficulty} /> : <Interstitial page={'difficulty'} handleDifficulty={handleDifficulty} handlePageChange={props.handlePageChange} />}
-
-      {gameEnd ? <Interstitial page={'endgame'} handlePageChange={props.handlePageChange} /> : null}
+      <div className='header'>
+        <button onClick={() => props.handlePageChange('home')}>&lt;</button>
+      </div>
+      <div className='gameboard'>
+        {difficulty ? <CardSpread setGameEnd={setGameEnd} difficulty={difficulty} /> : <Interstitial page={'difficulty'} handleDifficulty={handleDifficulty} handlePageChange={props.handlePageChange} />}
+        {gameEnd ? <Interstitial page={'endgame'} handlePageChange={props.handlePageChange} /> : null}
+      </div>
     </>
   );
 };

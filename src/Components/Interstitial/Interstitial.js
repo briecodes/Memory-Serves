@@ -82,7 +82,7 @@ export default function Interstitial(props) {
   };
 
   return (
-    <div className='intersititial'>
+    <div className={`intersititial ${props.page}`}>
       {handleDisplay()}
     </div>
   );
