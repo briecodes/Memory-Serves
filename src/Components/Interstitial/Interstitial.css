@@ -26,3 +26,11 @@ img.logo {
   width: 70vw;
   margin-bottom: 5%;
 }
+
+h1 {
+  font-size: 38px;
+  background-color: #ffffff;
+  padding: 0 15px 5px;
+  font-weight: normal;
+  border: 5px solid #2a6e9a;
+}
