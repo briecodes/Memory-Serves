@@ -5,7 +5,9 @@ import Card from '../../Components/Card/Card';
 
 export default function CardSpread(props) {
   const [cardSets, setCardSets] = useState({set: [], wonSet: []});
+  const [study, setStudy] = useState(true);
   const [deck, setDeck] = useState([]);
+  const studyTimeout = useRef();
   const compareTimeout = useRef();
 
   useEffect(() => {
@@ -17,6 +19,10 @@ export default function CardSpread(props) {
     };
 
     setDeck([...fisherYates(cardArray)]);
+
+    studyTimeout.current = setTimeout(() => setStudy(), (props.difficulty/3) * 1000 );
+
+    return () => clearTimeout(studyTimeout.current);
   }, [props.difficulty]);
 
   function fisherYates(arr) {
@@ -49,14 +55,13 @@ export default function CardSpread(props) {
   };
 
   function didjaWin() {
-    console.log(`didja win? ${cardSets.wonSet.length}, ${props.difficulty * 2}`)
     return cardSets.wonSet.length === props.difficulty * 2 ? true : false;
   };
 
   return (
     <div className='card-spread-container'>
       {didjaWin() ? props.setGameEnd(true) : null}
-      {deck.map(e => <Card key={e.key} id={e.id} handleCompare={compareSet} wonSet={cardSets.wonSet} set={cardSets.set} difficulty={props.difficulty} />)}
+      {deck.map(e => <Card key={e.key} id={e.id} handleCompare={compareSet} wonSet={cardSets.wonSet} set={cardSets.set} difficulty={props.difficulty} study={study} />)}
     </div>
   );
 };

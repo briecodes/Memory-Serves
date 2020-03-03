@@ -21,6 +21,10 @@ div.intersititial.about {
   border: 5px solid #2a6e9a;
 }
 
+div.intersititial.endgame {
+  background-color: rgba(202, 235, 251, 0.85);
+}
+
 div.intersititial div.center-bloc {
   align-self: center;
   display: flex;

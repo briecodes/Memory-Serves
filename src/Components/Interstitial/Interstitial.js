@@ -75,8 +75,8 @@ export default function Interstitial(props) {
   function endgame() {
     return (
       <div className='center-bloc'>
-        <h1>endgame</h1>
-        <button className='btn-back' onClick={() => props.handlePageChange('home')}>go back</button>
+        <h1>you dun won!</h1>
+        <button className='btn-secondary' onClick={() => props.handlePageChange('home')}>home</button>
       </div>
     );
   };
