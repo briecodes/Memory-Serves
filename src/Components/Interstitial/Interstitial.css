@@ -56,3 +56,13 @@ p.p-instructions {
 p.p-instructions:first-of-type {
   margin-bottom: 0;
 }
+
+p.p-about a,
+p.p-about a:hover,
+p.p-instructions a,
+p.p-instructions a:hover {
+  text-decoration: none;
+  background-color: #ffffff;
+  padding: 0 2px;
+  color: #2a6e9a;
+}

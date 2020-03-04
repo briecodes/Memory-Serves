@@ -41,7 +41,10 @@ export default function Interstitial(props) {
         <div className='center-bloc'>
         <h1>about</h1>
         <p className='p-about'>
-          Here is some copy about the app.
+          many thanks to <a href='https://www.instagram.com/kelseyohira/' target='_blank' rel='noopener noreferrer'>kelsey</a> for donating her precious drawings.
+        </p>
+        <p className='p-about'>
+          made with &hearts; by <a href='https://www.brie.work/' target='_blank' rel='noopener noreferrer'>brie</a> x <a href='https://mna.co/' target='_blank' rel='noopener noreferrer'>m+a</a>
         </p>
         <button className='btn-secondary' onClick={() => props.handlePageChange('home')}>go back</button>
       </div>
