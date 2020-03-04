@@ -53,6 +53,7 @@ p.p-instructions {
   width: 80%;
 }
 
+p.p-about:first-of-type,
 p.p-instructions:first-of-type {
   margin-bottom: 0;
 }
