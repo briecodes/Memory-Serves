@@ -40,7 +40,7 @@ export default function Interstitial(props) {
       return (
         <div className='center-bloc'>
         <h1>about</h1>
-        <p>
+        <p className='p-about'>
           Here is some copy about the app.
         </p>
         <button className='btn-secondary' onClick={() => props.handlePageChange('home')}>go back</button>
@@ -52,8 +52,12 @@ export default function Interstitial(props) {
       return (
         <div className='center-bloc'>
         <h1>instructions</h1>
-        <p>
-          Here are some instructions. wow.
+        <p className='p-instructions'>
+          tap to match characters hiding beihnd a grid of curtains.
+        </p>
+        <p className='p-instructions'>
+          …or don’t. <br />
+          whatever, it’s YOUR life.
         </p>
         <button className='btn-secondary' onClick={() => props.handlePageChange('home')}>go back</button>
       </div>
@@ -67,7 +71,6 @@ export default function Interstitial(props) {
         <button className='btn-primary' onClick={() => props.handleDifficulty('easy')}>easy</button>
         <button className='btn-primary' onClick={() => props.handleDifficulty('medium')}>medium</button>
         <button className='btn-primary' onClick={() => props.handleDifficulty('hard')}>hard</button>
-        <button className='btn-secondary' onClick={() => props.handlePageChange('home')}>go back</button>
       </div>
     );
   };

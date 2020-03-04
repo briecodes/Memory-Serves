@@ -47,3 +47,12 @@ h1 {
   font-weight: normal;
   border: 5px solid #2a6e9a;
 }
+
+p.p-about,
+p.p-instructions {
+  width: 80%;
+}
+
+p.p-instructions:first-of-type {
+  margin-bottom: 0;
+}
