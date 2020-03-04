@@ -56,7 +56,7 @@ export default function Interstitial(props) {
         <div className='center-bloc'>
         <h1>instructions</h1>
         <p className='p-instructions'>
-          tap to match characters hiding beihnd a grid of curtains.
+          tap to match characters hiding behind a grid of curtains.
         </p>
         <p className='p-instructions'>
           …or don’t. <br />
