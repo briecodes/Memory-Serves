@@ -17,7 +17,7 @@ export default function Card(props) {
   };
 
   return (
-    <div className={`card set count${props.difficulty} ${props.set.includes(props.id) || active || props.study ? 'active' : ''} ${props.wonSet.includes(props.id) ? 'won' : ''}`} onClick={handleClick}>
+    <div className={`card set character${props.id.split('-')[0]} count${props.difficulty} ${props.set.includes(props.id) || active || props.study ? 'active' : ''} ${props.wonSet.includes(props.id) ? 'won' : ''}`} onClick={handleClick}>
       <span className='temp-id'>{props.id}</span>
       <img src={cardFrame} className='card-frame' alt='card' />
       <img src={cardCurtain} className={`card-curtain ${props.set.includes(props.id) || active || props.study ? 'active' : ''} ${props.wonSet.includes(props.id) ? 'won' : ''}`} alt='card curtain' />
