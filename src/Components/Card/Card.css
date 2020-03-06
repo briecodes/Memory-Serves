@@ -62,26 +62,38 @@ div.card span.temp-id {
   font-size: .2em;
 }
 
-div.card.characterset1 {
+div.card.characterset0 {
   background: url(../../Assets/Images/pepper.png) no-repeat;
   background-size: 75%;
   background-position: center;
 }
 
-div.card.characterset2 {
+div.card.characterset1 {
   background: url(../../Assets/Images/gourd.png) no-repeat;
   background-size: 65%;
   background-position: center;
 }
 
-div.card.characterset3 {
+div.card.characterset2 {
   background: url(../../Assets/Images/carrot.png) no-repeat;
   background-size: 57%;
   background-position: center;
 }
 
-div.card.characterset4 {
+div.card.characterset3 {
   background: url(../../Assets/Images/punkin.png) no-repeat;
+  background-size: 75%;
+  background-position: center;
+}
+
+div.card.characterset4 {
+  background: url(../../Assets/Images/pig1.png) no-repeat;
+  background-size: 75%;
+  background-position: center;
+}
+
+div.card.characterset5 {
+  background: url(../../Assets/Images/pig2.png) no-repeat;
   background-size: 75%;
   background-position: center;
 }
